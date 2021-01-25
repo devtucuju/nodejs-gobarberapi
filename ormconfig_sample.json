@@ -1,0 +1,14 @@
+{
+  "type": "database type",
+  "host": "localhost",
+  "port": "defaul port database",
+  "username": "database username",
+  "password": "database password",
+  "database": "dabase name",
+  "entities": ["./src/models/*.ts"],
+  "migrations": ["./src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+}
+
