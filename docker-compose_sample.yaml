@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  adminer:
+    image: dockette/adminer:full
+    container_name: adminer
+    restart: always
+    ports:
+      - 8000:80
+    networks:
+      - skynet
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.docker/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: database user
+      POSTGRES_PASSWORD: database password
+      POSTGRES_DB: databasename
+    networks:
+      - skynet
+networks:
+  skynet:
+    driver: bridge
